@@ -63,16 +63,18 @@ public class Selenium_insta {
 		toLogin = wait.until(ExpectedConditions.visibilityOfElementLocated(
 				By.xpath("//*[@id=\"react-root\"]/section/main/article/div[2]/div[2]/p/a")));
 		toLogin.click();
+		//페이스북으로 로그인 클릭
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"react-root\"]/section/main/div/article/div/div[1]/div/form/div[6]/button"))).click();;
 		WebElement putId = wait
-				.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//form[@class='HmktE']/div[2]//input")));
+				.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"email\"]")));
 		putId.sendKeys(id);
 		driver.findElement(
-				By.xpath("//*[@id=\"react-root\"]/section/main/div/article/div/div[1]/div/form/div[3]/div/label/input"))
+				By.xpath("//*[@id=\"pass\"]"))
 				.sendKeys(pw);
 		;
 		Thread.sleep(1000);
 		driver.findElement(
-				By.xpath("//*[@id=\"react-root\"]/section/main/div/article/div/div[1]/div/form/div[4]/button")).click();
+				By.xpath("//*[@id=\"loginbutton\"]")).click();
 		try{wait.until(
 				ExpectedConditions.visibilityOfElementLocated(By.xpath("/html/body/div[3]/div/div/div[3]/button[2]")))
 				.click();
